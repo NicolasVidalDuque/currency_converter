@@ -3,15 +3,18 @@ import javax.swing.*;
 import CustomException.CustomException;
 
 public class OptionBox {
-    public static String display(int mode){
+    public static String display(String mode){
         String[] options;
         String question;
-        if(mode == 1){
+        if(mode == "first"){
             options = new String[]{"Currency Converter", "Length Converter"};
             question = "Choose converter type";
-        } else if (mode == 2) {
+        } else if (mode == "Currency Converter") {
             options = new String[]{"USD", "EU"};
             question = "Choose your target currency";
+        }else if (mode == "Length Converter"){
+            options = new String[]{"m", "mm", "inch", "km", "ft"};
+            question = "Choose your target length measurement";
         } else {
             throw new CustomException("This option does not exist");
         }
